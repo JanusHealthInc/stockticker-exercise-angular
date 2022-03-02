@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { StockTickerService } from './stock-ticker.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent {
-  title = 'stockticker';
+  constructor(private ticker: StockTickerService) {
+    ticker.tickEvents().subscribe(tickEvent => console.log(tickEvent))
+  }
 }
