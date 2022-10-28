@@ -4,10 +4,10 @@ import { StockTickerService } from './stock-ticker.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.sass']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
   constructor(private ticker: StockTickerService) {
-    ticker.tickEvents().subscribe(tickEvent => console.log(tickEvent))
+    ticker.tickEvents().subscribe((tickEvent) => console.log(tickEvent));
   }
 }
